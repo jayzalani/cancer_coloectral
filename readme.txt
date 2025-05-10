@@ -1,9 +1,8 @@
-# Colorectal Cancer Analysis Project
+# Production-Ready Document Q&A Solution
 
-![Project Banner](https://img.shields.io/badge/Project-Colorectal%20Cancer%20Analysis-blue)
-![Python](https://img.shields.io/badge/Python-3.11.9-brightgreen)
-![MLflow](https://img.shields.io/badge/MLflow-Tracking-red)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://your-demo-link.com)
+[![Documentation](https://img.shields.io/badge/Read-Documentation-blue)](https://your-docs-link.com)
+[![Architecture](https://img.shields.io/badge/View-Architecture-orange)](https://your-diagram-link.com)
 
 ## 📋 Overview
 
