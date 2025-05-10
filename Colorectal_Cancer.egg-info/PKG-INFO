@@ -11,6 +11,6 @@ Requires-Dist: joblib
 Requires-Dist: matplotlib
 Requires-Dist: seaborn
 Requires-Dist: mlflow
-Requires-Dist: kfp
+Requires-Dist: kfp==1.8.22
 Dynamic: author
 Dynamic: requires-dist

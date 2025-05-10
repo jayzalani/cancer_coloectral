@@ -1,3 +1,6 @@
 .venv/
 logs/
 Colorectal_Cancer.egg-info
+Project_info/
+
+readme.txt

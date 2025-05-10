@@ -5,5 +5,9 @@ Colorectal_Cancer.egg-info/dependency_links.txt
 Colorectal_Cancer.egg-info/requires.txt
 Colorectal_Cancer.egg-info/top_level.txt
 kubeflow_pipeline/__init__.py
+kubeflow_pipeline/mlops_pipeline.py
 src/__init__.py
+src/custom_exception.py
+src/data_processing.py
 src/logger.py
+src/model_training.py
