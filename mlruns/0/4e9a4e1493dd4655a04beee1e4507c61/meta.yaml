@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/All_SF/mlop/colorectal_cancer/mlruns/0/4e9a4e1493dd4655a04beee1e4507c61/artifacts
+end_time: 1746886769711
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4e9a4e1493dd4655a04beee1e4507c61
+run_name: bald-moose-638
+run_uuid: 4e9a4e1493dd4655a04beee1e4507c61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746886756769
+status: 3
+tags: []
+user_id: kanik
