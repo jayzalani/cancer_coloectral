@@ -28,7 +28,7 @@ Python 3.11.9
 1. **Clone the project**
    - Make a folder, then inside that folder run this command in VS Code terminal:
    ```
-   git clone <github url>
+   git clone https://github.com/jayzalani/cancer_coloectral.git
    ```
 
 2. **Generate Python virtual environment**
@@ -43,6 +43,8 @@ Python 3.11.9
    .venv\Scripts\Activate
    ```
    - If done correctly, you'll see a small green text with the environment name.
+   - ![Screenshot 2025-05-10 194522](https://github.com/user-attachments/assets/84f5beff-5f41-4685-883e-df32236f185d)
+
 
 4. **Install requirements**
    - Run this command to download all requirements listed in the requirements.txt file:
@@ -86,6 +88,7 @@ Once the variables are set up, run these commands:
    ```
 
 After everything is done correctly, there will be a link for the dashboard in your terminal. Press Ctrl and click on that link to open the MLflow dashboard.
+![Screenshot 2025-05-10 195723](https://github.com/user-attachments/assets/a68a6c69-644f-4bce-b0a5-b2f35725b81a)
 
 ## Project Workflow
 
