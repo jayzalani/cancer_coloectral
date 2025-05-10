@@ -1,186 +1,92 @@
-# Production-Ready Document Q&A Solution
+# Cancer Colorectal Project 
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://your-demo-link.com)
-[![Documentation](https://img.shields.io/badge/Read-Documentation-blue)](https://your-docs-link.com)
-[![Architecture](https://img.shields.io/badge/View-Architecture-orange)](https://your-diagram-link.com)
+## Tech Stack 
+- Python
+- Jupyter Notebook
+- GitHub
+- DagsHub
+- MLflow
+- Kubernetes
+- Kubeflow
+- Minikube
 
-## 📋 Overview
+## Setup Instructions
 
-This project provides an end-to-end machine learning pipeline for colorectal cancer analysis using a modern MLOps stack. The pipeline includes data preprocessing, feature engineering, model training, evaluation, and deployment capabilities using MLflow and Kubernetes.
+### Install Python on Your Local Machine
 
-## 🛠️ Tech Stack
-
-- **Programming Language**: Python
-- **Development Environment**: Jupyter Notebook
-- **Version Control**: Git & GitHub
-- **Experiment Tracking**: MLflow
-- **Remote Experiment Repository**: DagsHub
-- **Deployment Tools**: Kubernetes, Kubeflow, Minikube
-
-## 🚀 Installation & Setup
-
-### Prerequisites
-
-- Python 3.11.9 or higher
-- Git
-- VS Code (recommended)
-
-### Step 1: Check Python Installation
-
-```bash
+Check installation by running this command in your terminal:
+```
 python --version
 ```
-
-Expected output:
+After running, this output should appear (if not, there's a problem with the installation):
 ```
 Python 3.11.9
 ```
 
-### Step 2: Clone the Repository
+### Project Setup
 
-```bash
-git clone <github url>
-cd cancer_colorectal
+1. **Clone the project**
+   - Make a folder, then inside that folder run this command in VS Code terminal:
+   ```
+   git clone <github url>
+   ```
+
+2. **Generate Python virtual environment**
+   - This step is important:
+   ```
+   python -m venv .venv
+   ```
+   - After successful execution of this command, there should be a folder named `.venv` in your project directory.
+
+3. **Start the virtual environment**
+   ```
+   .venv\Scripts\Activate
+   ```
+   - If done correctly, you'll see a small green text with the environment name.
+
+4. **Install requirements**
+   - Run this command to download all requirements listed in the requirements.txt file:
+   ```
+   pip install -e .
+   ```
+   - Copy this command and paste it into the VS Code terminal where the environment setup is done.
+
+5. **Start the application**
+   - Once everything is installed, run this command:
+   ```
+   python application.py
+   ```
+
+## MLflow Experiment Setup
+
+We use MLflow for local experiment tracking and DagsHub for online tracking, which is common in industry-grade software.
+
+### Configure Environment Variables
+
+First, set up environment variables by copying these commands and pasting them into the VS Code terminal where the environment is activated:
+
 ```
-
-### Step 3: Set Up Python Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-### Step 4: Activate the Virtual Environment
-
-**On Windows:**
-```bash
-.venv\Scripts\Activate
-```
-
-**On macOS/Linux:**
-```bash
-source .venv/bin/activate
-```
-
-When activated correctly, you'll see the environment name in your terminal prompt:
-```
-(.venv) PS C:\Users\YourName\cancer_colorectal>
-```
-
-### Step 5: Install Dependencies
-
-```bash
-pip install -e .
-```
-
-### Step 6: Run the Application
-
-```bash
-python application.py
-```
-
-## 📊 MLflow Experiment Setup
-
-The project uses MLflow for both local experiment tracking and remote tracking through DagsHub.
-
-### Setting Up Environment Variables for Remote Tracking
-
-**On Windows PowerShell:**
-```powershell
 $env:MLFLOW_TRACKING_PASSWORD = "c1c7ea37e46eaaf3415d10baa9b057ca0c9a6aeb"
 $env:MLFLOW_TRACKING_USERNAME = "jayzalani"
 $env:MLFLOW_TRACKING_URI = "https://dagshub.com/jayzalani/cancer_coloectral.mlflow"
 ```
 
-**On macOS/Linux:**
-```bash
-export MLFLOW_TRACKING_PASSWORD="c1c7ea37e46eaaf3415d10baa9b057ca0c9a6aeb"
-export MLFLOW_TRACKING_USERNAME="jayzalani"
-export MLFLOW_TRACKING_URI="https://dagshub.com/jayzalani/cancer_coloectral.mlflow"
-```
+### Start MLflow and Run Experiments
 
-### Running Model Training
+Once the variables are set up, run these commands:
 
-To test that the training pipeline works correctly:
+1. **Check if the code is working on model_training**
+   ```
+   python src/model_training.py
+   ```
 
-```bash
-python src/model_training.py
-```
+2. **Start the MLflow dashboard**
+   ```
+   mlflow ui
+   ```
 
-### Viewing MLflow Dashboard
+After everything is done correctly, there will be a link for the dashboard in your terminal. Press Ctrl and click on that link to open the MLflow dashboard.
 
-Start the MLflow user interface:
+## Project Workflow
 
-```bash
-mlflow ui
-```
-
-After running the command, you'll see a URL (typically `http://127.0.0.1:5000`) in your terminal. Press `Ctrl` + click on this link to open the MLflow dashboard in your browser.
-
-## 📐 Project Architecture
-
-The project follows a modular architecture for training and deploying machine learning models:
-
-```
-cancer_colorectal/
-├── .venv/                  # Virtual environment
-├── src/                    # Source code
-│   ├── data_processing/    # Data preprocessing modules
-│   ├── model_training.py   # Model training script
-│   └── utils/              # Utility functions
-├── notebooks/              # Jupyter notebooks for exploration
-├── tests/                  # Unit tests
-├── models/                 # Saved model artifacts
-├── configs/                # Configuration files
-├── k8s/                    # Kubernetes deployment files
-├── application.py          # Main application entry point
-├── setup.py                # Package setup file
-└── README.md               # Project documentation
-```
-
-## 🔄 MLOps Workflow
-
-1. **Data Ingestion**: Load and preprocess the colorectal cancer dataset
-2. **Feature Engineering**: Extract meaningful features from raw data
-3. **Model Training**: Train various ML models with hyperparameter tuning
-4. **Evaluation**: Assess model performance using appropriate metrics
-5. **Experiment Tracking**: Log all parameters, metrics, and artifacts with MLflow
-6. **Deployment**: Deploy models using Kubernetes and Kubeflow
-
-## 🧪 Running Tests
-
-```bash
-pytest tests/
-```
-
-## 🚢 Kubernetes Deployment
-
-The project includes configuration for deploying the model as a service using Kubernetes:
-
-1. Ensure Minikube is installed and running
-2. Apply the Kubernetes configurations:
-
-```bash
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
-```
-
-## 📈 DagsHub Integration
-
-The project uses DagsHub for remote experiment tracking. View experiments at:
-[https://dagshub.com/jayzalani/cancer_coloectral](https://dagshub.com/jayzalani/cancer_coloectral)
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Contributors
-
-- Jay Zalani
-
-## 📫 Contact
-
-For any questions or suggestions, please open an issue on GitHub or contact the maintainers.
-
----
-
-**Note**: For detailed information about the project workflow and architecture, please refer to the `NOTES.pdf` file included in the repository.
+For detailed information about the project workflow and architecture, please refer to the PDF and NOTES.pdf files included in the repository.
